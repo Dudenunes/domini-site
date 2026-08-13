@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://domini.global/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://domini.global/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://domini.global/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://domini.global/es/"/>
+  </url>
+  <url>
+    <loc>https://domini.global/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://domini.global/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://domini.global/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://domini.global/es/"/>
+  </url>
+  <url>
+    <loc>https://domini.global/es/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://domini.global/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://domini.global/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://domini.global/es/"/>
+  </url>
+</urlset>
