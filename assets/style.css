@@ -133,6 +133,8 @@
     transition: transform 150ms ease, opacity 150ms ease;
   }
   .store-badge:hover { transform: translateY(-2px); opacity: 0.9; }
+  .store-badge-disabled { cursor: default; }
+  .store-badge-disabled:hover { transform: none; opacity: 1; }
   .soon {
     font-size: 9.5px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
     background: var(--gold); color: var(--ink-900); padding: 3px 8px; border-radius: var(--r-pill); margin-left: 2px;
