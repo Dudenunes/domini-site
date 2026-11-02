@@ -316,3 +316,10 @@ div.profile-avatar { display: grid; place-items: center; font-size: 28px; font-w
 .progress .num { font-size: 13px; color: var(--ink-500); }
 .ok { color: var(--green); }
 td .small { margin-top: 2px; }
+
+.total-ativ-num { font-size: 44px; font-weight: 800; letter-spacing: -0.02em; margin: 4px 0 16px; }
+.total-ativ-lista { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px 20px; }
+.total-ativ-lista div { display: flex; flex-direction: column; }
+.total-ativ-lista strong { font-size: 18px; }
+.total-ativ-lista span { font-size: 12px; opacity: .7; }
+@media (max-width: 760px) { .total-ativ-lista { grid-template-columns: repeat(2, 1fr); } }

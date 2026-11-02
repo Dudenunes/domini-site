@@ -208,8 +208,15 @@ async function getPerfil(id, force) {
 
 // ---------- Telas ----------
 
+async function getAtividades(force) {
+  if (force || !cache.atividades) cache.atividades = await rpc('admin_atividades_total');
+  return cache.atividades;
+}
+
 async function telaVisaoGeral(force) {
   const r = await getResumo(force);
+  const ativ = await getAtividades(force) || [];
+  const totalAtiv = ativ.reduce((a, x) => a + Number(x.n), 0);
   const serie = r.serie_30d || [];
   const sem = r.semana || {};
   const porRecurso = r.por_recurso_30d || [];
@@ -221,7 +228,13 @@ async function telaVisaoGeral(force) {
   const sumidos = r.sumidos || [];
 
   return `
-    <div class="kpis">
+    <div class="card card-pad total-ativ">
+      <p class="card-sub">Atividades realizadas no app, desde o início</p>
+      <div class="total-ativ-num">${fmt(totalAtiv)}</div>
+      <div class="total-ativ-lista">${ativ.map((x) => `<div><strong>${fmt(x.n)}</strong><span>${esc(x.tipo)}</span></div>`).join('')}</div>
+    </div>
+
+    <div class="kpis" style="margin-top:12px">
       ${kpi('Pessoas cadastradas', fmt(r.usuarios_total), `<strong>+${fmt(sem.novos)}</strong> nesta semana · ${delta(sem.novos, sem.novos_antes)}`)}
       ${kpi('Ativas nesta semana', fmt(sem.ativos), `${pct(sem.ativos, r.usuarios_total)}% da base · ${delta(sem.ativos, sem.ativos_antes)}`)}
       ${kpi('Práticas nesta semana', fmt(sem.praticas), delta(sem.praticas, sem.praticas_antes))}
