@@ -760,6 +760,9 @@ $('#forgotPassword').addEventListener('click', async () => {
 });
 
 $('#refreshButton').addEventListener('click', () => render(true));
+// Atualiza sozinho a cada 2 minutos e ao voltar para a aba.
+setInterval(() => { if (!document.hidden && supabase) render(true); }, 120000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) render(true); });
 $('#logoutButton').addEventListener('click', async () => {
   await supabase.auth.signOut();
   cache.resumo = null; cache.pessoas = null; cache.caminhos = null; cache.perfis.clear();
