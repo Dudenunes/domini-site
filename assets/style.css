@@ -387,3 +387,4 @@
 
 .hero h1 { max-width: none; }
 .hero .lede { font-style: italic; }
+.features .fs-text p { font-style: italic; }
