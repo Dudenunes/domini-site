@@ -388,3 +388,9 @@
 .hero h1 { max-width: none; }
 .hero .lede { font-style: italic; }
 .features .fs-text p { font-style: italic; }
+
+/* Proposta: parágrafo serifado itálico, destaques discretos, traço dourado */
+.features .fs-text p { font-family: 'Source Serif Var', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.6; }
+.fs-list { gap: 8px; margin-top: 24px; }
+.fs-list li { font-size: 14px; color: var(--ink-500); padding-left: 24px; }
+.fs-list li::before { width: 12px; height: 1.5px; border-radius: 0; top: 10px; background: var(--gold); box-shadow: none; }

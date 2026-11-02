@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Domini · Painel</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="admin.css?v=5">
+</head>
+<body>
+  <!-- Login -->
+  <main id="loginView" class="login" hidden>
+    <div class="login-card card">
+      <img class="logo logo-light" src="logo.png" alt="Domini">
+      <img class="logo logo-dark" src="logo-dark.png" alt="Domini">
+      <p class="eyebrow">Área restrita</p>
+      <h1>Painel do Domini</h1>
+      <p class="muted">Entre com sua conta Domini cadastrada como administradora.</p>
+      <form id="loginForm" autocomplete="on">
+        <label>Email<input id="email" name="email" type="email" required autocomplete="username"></label>
+        <label>Senha<input name="password" type="password" required autocomplete="current-password"></label>
+        <button id="loginButton" class="btn btn-primary" type="submit">Entrar</button>
+        <button id="forgotPassword" class="btn-link" type="button">Esqueci a senha</button>
+        <p id="loginMessage" class="form-message" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Painel -->
+  <div id="appView" class="shell" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="#visao-geral">
+        <img class="logo logo-light" src="logo.png" alt="Domini">
+        <img class="logo logo-dark" src="logo-dark.png" alt="Domini">
+      </a>
+      <nav class="nav">
+        <a href="#visao-geral" data-route="visao-geral">Visão geral</a>
+        <a href="#pessoas" data-route="pessoas">Pessoas</a>
+        <a href="#caminhos" data-route="caminhos">Caminhos</a>
+        <a href="#conteudo" data-route="conteudo">Conteúdo</a>
+        <a href="#operacao" data-route="operacao">Operação</a>
+      </nav>
+      <div class="sidebar-foot">
+        <p id="accountEmail" class="muted small"></p>
+        <button id="logoutButton" class="btn-link" type="button">Sair</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h1 class="page-title"><span class="dot"></span><span id="pageTitle">Visão geral</span></h1>
+        <div class="topbar-actions">
+          <span id="updatedAt" class="muted small"></span>
+          <button id="refreshButton" class="btn btn-ghost" type="button">Atualizar</button>
+        </div>
+      </header>
+      <p id="notice" class="notice" hidden></p>
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <script type="module" src="admin.js?v=5"></script>
+</body>
+</html>
