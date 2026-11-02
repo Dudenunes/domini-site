@@ -307,3 +307,63 @@
 .legal p, .legal li { color: var(--ink-500); font-size: 15px; line-height: 1.65; }
 .legal ul { padding-left: 20px; margin: 10px 0; }
 .legal a { color: var(--ink-900); text-decoration: underline; text-decoration-color: var(--line); }
+
+/* Seções de funcionalidade (2026-11): mesmos componentes do carrossel */
+.features .fs-static { flex: none; width: 100%; padding: 56px 0; }
+.features .fs-rev .fs-text { order: 2; }
+.glow-vermelho { background: radial-gradient(circle, var(--vermelho-accent), transparent 68%); }
+.glow-branco { background: radial-gradient(circle, var(--branco-accent), transparent 68%); }
+@media (max-width: 760px) { .features .fs-rev .fs-text { order: 2; } .features .fs-static { padding: 32px 0; } }
+
+.features .fs-static { flex: none !important; width: 100% !important; max-width: 1040px; margin: 0 auto;
+  grid-template-columns: 1fr 1fr !important; gap: 72px; padding: 72px 0; }
+.features .fs-text h3 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; }
+.features .fs-text p { font-size: 17px; max-width: 42ch; }
+.fs-list { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+.fs-list li { position: relative; padding-left: 26px; font-size: 15px; color: var(--ink-900); line-height: 1.45; }
+.fs-list li::before { content: ""; position: absolute; left: 0; top: 4px; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--verde-tint); box-shadow: inset 0 0 0 4px var(--verde-tint), inset 0 0 0 7px var(--verde-accent); }
+@media (max-width: 760px) { .features .fs-static { grid-template-columns: 1fr !important; gap: 28px; text-align: left; }
+  .fs-list { justify-items: start; } }
+
+/* Movimento (2026-11) */
+@keyframes flutuar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.features .fs-shot { animation: flutuar 6s ease-in-out infinite; }
+.features .fs-static:nth-child(even) .fs-shot { animation-delay: -3s; }
+.features .fs-static.reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.features .fs-static.reveal.is-visible { opacity: 1; transform: none; }
+.features .fs-static.reveal .fs-text { opacity: 0; transform: translateX(-30px); transition: all .8s .15s cubic-bezier(.2,.7,.2,1); }
+.features .fs-static.fs-rev.reveal .fs-text { transform: translateX(30px); }
+.features .fs-static.reveal.is-visible .fs-text { opacity: 1; transform: none; }
+.features .glow-item.active { opacity: .45; animation: pulsar 7s ease-in-out infinite; }
+@keyframes pulsar { 0%,100% { opacity: .3; } 50% { opacity: .5; } }
+@media (prefers-reduced-motion: reduce) { .features .fs-shot, .features .glow-item { animation: none; } }
+
+.footer-ig { display: inline-flex; align-items: center; opacity: .7; }
+.footer-ig:hover { opacity: 1; }
+.close-line a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); }
+
+/* Elegância (2026-11): serifa nos títulos, mais respiro, só dourado */
+.features .fs-static { padding: 120px 0; gap: 96px; max-width: 980px; }
+.features .fs-text h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.15; letter-spacing: -0.01em; }
+.features .fs-text p { max-width: 36ch; font-size: 17px; line-height: 1.7; }
+.features .fs-shot { width: min(210px, 70vw); }
+.features .fs-text .eyebrow { background: var(--gold-tint) !important; color: var(--branco-accent) !important; letter-spacing: .04em; text-transform: uppercase; font-size: 11px; }
+.fs-list li::before { background: var(--gold-tint); box-shadow: inset 0 0 0 4px var(--gold-tint), inset 0 0 0 7px var(--gold); }
+.features .glow-item.active { opacity: .22; animation: none; }
+.band { background: var(--creme); padding: 120px 0; }
+.band blockquote { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(26px, 3vw, 38px); line-height: 1.35; max-width: 26ch; margin: 0 auto 14px; }
+.band .ref { letter-spacing: .06em; text-transform: uppercase; font-size: 12px; margin-bottom: 36px; }
+@media (max-width: 760px) { .features .fs-static { padding: 64px 0; gap: 36px; } .band { padding: 80px 0; } }
+
+.features .fs-text h3 { font-family: 'Source Serif 4', Georgia, serif; font-style: normal; }
+
+/* Faixa de números, moldura e fecho em 2 linhas (2026-11) */
+.numeros { padding: 40px 0 8px; }
+.numeros-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 900px; margin: 0 auto;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 28px 0; text-align: center; }
+.numeros strong { display: block; font-family: 'Source Serif 4', Georgia, serif; font-weight: 500; font-size: 34px; color: var(--ink-900); }
+.numeros span { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-500); }
+.features .fs-shot { border: 7px solid #1d1416; border-radius: 34px; box-shadow: 0 30px 60px -28px rgba(36,20,23,.45); }
+.band blockquote { max-width: 46ch; font-size: clamp(22px, 2.4vw, 30px); }
+@media (max-width: 760px) { .numeros-grid { grid-template-columns: repeat(2, 1fr); } }
