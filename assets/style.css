@@ -380,3 +380,7 @@
 .band blockquote { margin-bottom: 8px; }
 .band .ref { margin-bottom: 24px; }
 @media (max-width: 760px) { .numeros span { white-space: normal; } .band { padding: 48px 0; } }
+
+.hero .lede { margin-bottom: 48px; }
+.numeros { padding-top: 64px; }
+.hero h1 { font-size: clamp(42px, 5.6vw, 72px); }
